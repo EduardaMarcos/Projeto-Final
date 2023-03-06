@@ -1,0 +1,42 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: #ffa700;
+}
+
+.margem{
+    margin: 30px;
+}
+
+.clientes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    color: black;
+    margin-left: 30px;
+    margin-top: 90px;
+
+}
+
+.conjunto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-title {
+    text-decoration: underline 2px rgb(245, 170, 7);
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}

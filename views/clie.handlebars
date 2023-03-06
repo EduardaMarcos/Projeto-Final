@@ -44,25 +44,25 @@
     </nav>
 
     <div class="margem">
-    <h1>Cartões</h1>
-    <div class="conjunto">
-        {{#each listar}}
+        <h1>Clientes</h1>
+        <div class="conjunto">
+            {{#each listar}}
 
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{endereco}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Código de segurança: {{coddeseg}}</h6>
-                <p class="card-text">Data de validade: {{dataexp}}<br>Tipo do cartão: {{tipodecartao}}<br></p>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{nome_cliente}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted"> CPF: {{cpf}}</h6>
+                    <p class="card-text">Email: {{email}}<br>Telefone: {{telefone}}</p>
 
-                <button type="submit" value="Buscar" class="btn btn-outline-warning"><a
-                        href="/cartao/{{this.id_do_cartao}}" class="card-link"> Mais informações</a></button>
+                    <button type="submit" value="Buscar" class="btn btn-outline-warning"><a
+                            href="/clie/{{this.id_do_cliente}}" class="card-link"> Mais informações</a></button>
+                </div>
             </div>
+            {{/each}}
+
+
+
         </div>
-        {{/each}}
-
-
-
-    </div>
     </div>
 
 

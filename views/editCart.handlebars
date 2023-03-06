@@ -4,42 +4,78 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="/publico/css/edit.css">
+   
 </head>
 
-<body>
-    <form action="/alterar/updateclient" method="POST">
-        <div class="form control">
-            <input type="hidden" name="iddocartao" id="iddocartao" value="{{cartao.iddocartao}}">
-            <label for="nome">Número do cartão</label>
-            <input type="text" name="coddeseg" placeholder="Digite aqui o número do cartao" value="{{cartao.coddeseg}}">
-        </div>
+<body >
 
-        <div class="form control">
-            <label for="email">Data de validade</label>
-            <input type="text" name="dataexp" placeholder="Digite a data de validade do cartão"
+     <h1>Editar Cartão</h1>
+
+
+<form action="/alterar/updateclient" method="post">
+            <div class="form-group">
+                <input class="form-control" type="hidden" name="id_do_cartao" id="id_do_cartao" value="{{cartao.id_do_cartao}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputCpf1">Endereço:</label>
+                <input type="text" class="form-control" name="numero_do_cartao" placeholder="Digite o número do cartão"
+                value="{{cartao.numero_do_cartao}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email:</label>
+                <input class="form-control" name="coddeseg" placeholder="Digite aqui o número do cartao" value="{{cartao.coddeseg}}">
+            </div>
+
+             <div class="form-group">
+                <label for="exampleInputEmail1">Telefone:</label>
+                <input class="form-control" name="dataexp" placeholder="Digite a data de validade do cartão"
                 value="{{cartao.dataexp}}">
-        </div>
+            </div>
 
-        <div class="form control">
-            <label for="telefone">Tipo de cartão</label>
-            <input type="text" name="tipodecartao" placeholder="Digite o tipo de cartão"
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telefone:</label>
+                <input class="form-control" name="tipodecartao" placeholder="Digite o tipo de cartão"
                 value="{{cartao.tipodecartao}}">
-        </div>
+            </div>
 
-        <div class="form control">
-            <label for="idade">Limite do cartao</label>
-            <input type="text" name="limitecartao" placeholder="Digite o limite do cartão"
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telefone:</label>
+                <input class="form-control"name="limitecartao" placeholder="Digite o limite do cartão"
                 value="{{cartao.limitecartao}}">
-        </div>
+            </div>
 
-        <div class="form control">
-            <label for="idade">Saldo do cartão</label>
-            <input type="text" name="saldocartao" placeholder="Digite o saldo do cartão" value="{{cartao.saldocartao}}">
-        </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telefone:</label>
+                <input class="form-control"name="saldocartao" placeholder="Digite o saldo do cartão" value="{{cartao.saldocartao}}">
+            </div>
 
-        <input type="Submit" value="Editar">
+            <div class="form-group">
+                <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
+            </div>
+
+        </form>
+
+
+
+
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+
+
 </body>
 
 </html>

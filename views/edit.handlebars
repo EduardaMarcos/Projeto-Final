@@ -6,48 +6,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="/publico/css/edit.css">
+   
 </head>
 
 <body >
-    <h1>Editar cliente</h1>
-    <form action="/prod/updateprod" method="post">
-        <div class="form-control">
-            <input type="hidden" name="id_do_cliente" id="id_do_cliente" value="{{prod.id_do_cliente}}">
-            <br><br>
-            <label for="name">Nome:</label>
-            <input type="text" name="nome_cliente" placeholder="Digite o nome do cliente" value="{{prod.nome_cliente}}">
-            <br><br>
-            <label for="name">CPF:</label>
-            <input type="text" name="cpf" placeholder="Digite o cpf do cliente" value="{{prod.cpf}}">
-            <br><br>
-            <label for="email">Email:</label>
-            <input type="text" name="email" placeholder="Digite o email do cliente" value="{{prod.email}}">
-            <br><br>
-            <label for="telefone">Telefone:</label>
-            <input type="text" name="telefone" placeholder="Digite o telefone do cliente" value="{{prod.telefone}}">
-            <br><br>
-            <label for="endereco_cliente">Endereço:</label>
-            <input type="text" name="endereco_cliente" placeholder="Digite o endereço do cliente"
-                value="{{prod.endereco_cliente}}">
-            <br><br>
-            <label for="id_do_emprestimo">ID do Empréstimo:</label>
-            <input type="number" name="id_do_emprestimo" placeholder="Digite o id do empréstimo"
-                value="{{prod.id_do_emprestimo}}">
-            <br><br>
-            <label for="id_do_cartao">ID do Cartão:</label>
-            <input type="number" name="id_do_cartao" placeholder="Digite o id do cartão" value="{{prod.id_do_cartao}}">
-            <br><br>
-            <label for="id_da_agencia">ID da Agência:</label>
-            <input type="number" name="id_da_agencia" placeholder="Digite a sua agência" value="{{prod.id_da_agencia}}">
-            <br><br>
-            <input type="submit" value="Editar">
-        </div>
 
-    </form>
+     <h1>Editar cliente</h1>
 
 
+<form action="/clie/updateclie" method="post">
+            <div class="form-group">
+                <input class="form-control" type="hidden" name="id_do_cliente" id="id_do_cliente" value="{{clie.id_do_cliente}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputCpf1">Nome:</label>
+                <input type="text" class="form-control" name="nome_cliente" placeholder="Digite o nome do cliente" value="{{clie.nome_cliente}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">CPF:</label>
+                <input class="form-control"name="cpf" placeholder="Digite o cpf do cliente" value="{{clie.cpf}}">
+            </div>
+
+             <div class="form-group">
+                <label for="exampleInputEmail1">Email:</label>
+                <input class="form-control" name="email" placeholder="Digite o email do cliente" value="{{clie.email}}">
+            </div>
+
+             <div class="form-group">
+                <label for="exampleInputEmail1">Telefone:</label>
+                <input class="form-control" name="telefone" placeholder="Digite o telefone do cliente" value="{{clie.telefone}}">
+            </div>
+
+             <div class="form-group">
+                <label for="exampleInputEmail1">Endereço:</label>
+                <input class="form-control" name="endereco_cliente" placeholder="Digite o endereço do cliente"
+                value="{{clie.endereco_cliente}}">
+            </div>
+
+             <div class="form-group">
+                <label for="exampleInputEmail1">ID do empréstimo:</label>
+                <input class="form-control"  name="id_do_emprestimo" placeholder="Digite o id do empréstimo"
+                value="{{clie.id_do_emprestimo}}">
+            </div>
+
+             <div class="form-group">
+                <label for="exampleInputEmail1">Numero do cartão:</label>
+                <input class="form-control" name="id_do_cartao" placeholder="Digite o id do cartão" value="{{clie.id_do_cartao}}">
+            </div>
+
+             <div class="form-group">
+                <label for="exampleInputEmail1">Agencia:</label>
+                <input class="form-control" name="id_da_agencia" placeholder="Digite a sua agência" value="{{clie.id_da_agencia}}">
+            </div>
 
 
+            <div class="form-group">
+                <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
+            </div>
+
+        </form>
+
+
+
+
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
 
 
 </body>

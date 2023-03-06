@@ -1,0 +1,17 @@
+body{
+    background-color: black;
+    
+}
+
+form{
+    color: #ffa700;
+    width: 600px;
+    height: 600px;
+    padding-top: 250px;
+}
+
+.corno{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

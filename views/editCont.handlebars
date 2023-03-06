@@ -1,26 +1,72 @@
-<h1> Editar Clientes</h1>
-<hr>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="/publico/css/edit.css">
+   
+</head>
+
+<body >
+
+     <h1>Editar Conta</h1>
+
 
 <form action="/cont/updatecont" method="post">
-    <div class="form-control">
-        <input type="hidden" name="id_da_conta" id="" value="{{cont.id_da_conta}}">
-        <br><br>
-        <label for="name">Nome:</label>
-        <input type="text" name="nome_cliente" placeholder="Digite o nome do cliente" value="{{cont.nome_cliente}}">
-        <br><br>
-        <label for="name">ID do cliente:</label>
-        <input type="text" name="id_do_cliente" placeholder="Digite o ID do cliente" value="{{cont.id_do_cliente}}">
-        <br><br>
-        <label for="email">Tipo de conta:</label>
-        <input type="text" name="tipo_de_conta" placeholder="Digite o tipo de conta" value="{{cont.tipo_de_conta}}">
-        <br><br>
-        <label for="telefone">Saldo da conta:</label>
-        <input type="text" name="saldo" placeholder="Digite o saldo da conta" value="{{cont.saldo}}">
-        <br><br>
-        <label for="id_da_agencia">ID da Agência:</label>
-        <input type="number" name="id_da_agencia" placeholder="Digite o ID da agência" value="{{cont.id_da_agencia}}">
-        <br><br>
-        <input type="submit" value="Editar">
-    </div>
+            <div class="form-group">
+                <input class="form-control" type="hidden"name="id_da_conta" id="" value="{{cont.id_da_conta}}">
+            </div>
 
-</form>
+            <div class="form-group">
+                <label for="exampleInputCpf1">Endereço:</label>
+                <input type="text" class="form-control" name="nome_cliente" placeholder="Digite o nome do cliente" value="{{cont.nome_cliente}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email:</label>
+                <input class="form-control"name="id_do_cliente" placeholder="Digite o ID do cliente" value="{{cont.id_do_cliente}}">
+            </div>
+
+             <div class="form-group">
+                <label for="exampleInputEmail1">Telefone:</label>
+                <input class="form-control" name="tipo_de_conta" placeholder="Digite o tipo de conta" value="{{cont.tipo_de_conta}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telefone:</label>
+                <input class="form-control" name="saldo" placeholder="Digite o saldo da conta" value="{{cont.saldo}}">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Telefone:</label>
+                <input class="form-control" name="id_da_agencia" placeholder="Digite o ID da agência" value="{{cont.id_da_agencia}}">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
+            </div>
+
+        </form>
+
+
+
+
+         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

@@ -1,12 +1,77 @@
-<h1>Informações do cliente</h1>
+<!DOCTYPE html>
+<html lang="en">
 
-<h3> {{listarCartao.iddocartao}} </h3>
-<p>Número do cartão: {{listarCartao.coddeseg}} </p>
-<p>Data de validade: {{listarCartao.dataexp}} </p>
-<p>Tipo de cartão: {{listarCartao.tipodecartao}} </p>
-<p>Limite: {{listarCartao.limitecartao}} </p>
-<p>Saldo: {{listarCartao.saldocartao}} </p>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/publico/css/visu1.css">
+ <link rel="stylesheet" href="/publico/css/home.css">
+</head>
 
-<a href="/cartao/editCart/{{listarCartao.iddocartao}}"> EDITAR</a>
-<br><br>
-<a href="/cartao/remove/{{listarCartao.iddocartao}}"> EXCLUIR</a>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"> <strong class="sena"><i>SENA</i></strong><strong><i>BANK</i></strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto container-fluid justify-content-end">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/home">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/cadastro">Cadastrar</a>
+                </li>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="/dados">Dados</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="#">Squad</a>
+                </li>
+            </ul>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </nav>
+    <div class="clientes">
+        <h1>Cartão</h1>
+        <h3>{{listarCartao.nome_cliente}}</h3>
+
+        <div class="card" style="width: 28rem;">
+            <div class="card-body">
+                <h5 class="card-title">CPF:</h5>
+                <p class="card-text"> {{listarCartao.cpf}}</p>
+                <h5 class="card-title">Numero do cartão:</h5>
+                <p class="card-text"> {{listarCartao.numero_do_cartao}}</p>
+                <h5 class="card-title">Codigo de segurança:</h5>
+                <p class="card-text"> {{listarCartao.coddeseg}} </p>
+                <h5 class="card-title">Data de validade:</h5>
+                <p class="card-text"> {{listarCartao.dataexp}}</p>
+                <h5 class="card-title">Tipo do cartão:</h5>
+                <p class="card-text"> {{listarCartao.tipodecartao}} </p>
+                <h5 class="card-title">Limite:</h5>
+                <p class="card-text"> {{listarCartao.limitecartao}}</p>
+                <h5 class="card-title">Saldo:</h5>
+                <p class="card-text"> {{listarCartao.saldocartao}}</p>
+
+                <button type="button" class="btn btn-outline-warning"><a href="/cartao/editCart/{{listarCartao.id_do_cartao}}">
+                        <strong>Editar</strong></a></button>
+                <button type="button" class="btn btn-outline-warning"><a
+                        href="/cartao/remove/{{listarCartao.id_do_cartao}}"><strong>Excluir</strong></a></button>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
