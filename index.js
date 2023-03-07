@@ -58,7 +58,7 @@ app.post('/clie/insertclie', (req, res) => {
         if (err) {
             console.log(err)
         }
-        res.redirect('/')
+        res.redirect('/home')
         console.log("Cadastro com sucesso")
     })
 })
@@ -177,7 +177,7 @@ app.post('/emp/insertemp', (req, res) => {
         if (err) {
             console.log(err)
         }
-        res.redirect('/')
+        res.redirect('/home')
         console.log("Cadastro com sucesso")
     })
 })
@@ -283,17 +283,18 @@ app.post('/busque/', (req, res) => {
 
 // inserir dados na tabela agencia
 app.post('/age/insertage', (req, res) => {
+    const id_da_agencia = req.body.id_da_agencia
     const endereco = req.body.endereco
     const email = req.body.email
     const telefone = req.body.telefone
 
-    const sql = `INSERT INTO agencia (endereco,email,telefone) VALUES ('${endereco}','${email}','${telefone}')`
+    const sql = `INSERT INTO agencia (endereco,email,telefone,id_da_agencia) VALUES ('${endereco}','${email}','${telefone}','${id_da_agencia}')`
 
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
         }
-        res.redirect('/')
+        res.redirect('/home')
         console.log("Cadastro com sucesso")
     })
 })
@@ -409,7 +410,7 @@ app.post('/fun/insertfun', (req, res) => {
         if (err) {
             console.log(err)
         }
-        res.redirect('/')
+        res.redirect('/home')
         console.log("Cadastro com sucesso")
     })
 })
@@ -528,7 +529,7 @@ app.post('/cartao/insertcartao', (req, res) => {
         if (err) {
             console.log(err)
         }
-        res.redirect('/')
+        res.redirect('/home')
         console.log("Cadastro com sucesso")
     })
 })
@@ -651,7 +652,7 @@ app.post('/cont/insertcont', (req, res) => {
         if (err) {
             console.log(err)
         }
-        res.redirect('/')
+        res.redirect('/home')
         console.log("Cadastro com sucesso")
     })
 })
