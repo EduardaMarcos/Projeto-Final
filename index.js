@@ -49,10 +49,10 @@ app.post('/clie/insertclie', (req, res) => {
     const telefone = req.body.telefone
     const endereco_cliente = req.body.endereco_cliente
     const id_do_emprestimo = req.body.id_do_emprestimo
-    const id_do_cartao = req.body.id_do_cartao
+    const numero_do_cartao = req.body.numero_do_cartao
     const id_da_agencia = req.body.id_da_agencia
 
-    const sql = `INSERT INTO clientes (nome_cliente,cpf,email,telefone,endereco_cliente,id_do_emprestimo,id_do_cartao,id_da_agencia) VALUES ('${nome_cliente}','${cpf}','${email}','${telefone}','${endereco_cliente}','${id_do_emprestimo}','${id_do_cartao}','${id_da_agencia}')`
+    const sql = `INSERT INTO clientes (nome_cliente,cpf,email,telefone,endereco_cliente,id_do_emprestimo,numero_do_cartao,id_da_agencia) VALUES ('${nome_cliente}','${cpf}','${email}','${telefone}','${endereco_cliente}','${id_do_emprestimo}','${numero_do_cartao}','${id_da_agencia}')`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -118,10 +118,10 @@ app.post('/clie/updateclie', (req, res) => {
     const telefone = req.body.telefone
     const endereco_cliente = req.body.endereco_cliente
     const id_do_emprestimo = req.body.id_do_emprestimo
-    const id_do_cartao = req.body.id_do_cartao
+    const numero_do_cartao = req.body.numero_do_cartao
     const id_da_agencia = req.body.id_da_agencia
 
-    const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', id_do_emprestimo = '${id_do_emprestimo}', id_do_cartao = '${id_do_cartao}', id_da_agencia = '${id_da_agencia}' WHERE id_do_cliente = ${id_do_cliente}`
+    const sql = `UPDATE clientes SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', email = '${email}', telefone = '${telefone}', endereco_cliente = '${endereco_cliente}', id_do_emprestimo = '${id_do_emprestimo}', numero_do_cartao = '${numero_do_cartao}', id_da_agencia = '${id_da_agencia}' WHERE id_do_cliente = ${id_do_cliente}`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -166,12 +166,12 @@ app.post('/busc/', (req, res) => {
 
 // inserir dados na tabela emprestimo
 app.post('/emp/insertemp', (req, res) => {
-    const nome = req.body.nome_cliente
+    const cpf = req.body.cpf
     const emprestimo = req.body.emprestimo
     const parcelas = req.body.parcelas
     const juros = req.body.juros
     const data = req.body.data
-    const sql = `INSERT INTO emprestimo (nome,valor_emprestimo,parcelas,juros,data) VALUES ('${nome}','${emprestimo}','${parcelas}','${juros}','${data}')`
+    const sql = `INSERT INTO emprestimo (cpf,valor_emprestimo,parcelas,juros,data) VALUES ('${cpf}','${emprestimo}','${parcelas}','${juros}','${data}')`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -231,13 +231,13 @@ app.get('/emp/editE/:id_do_emprestimo', (req, res) => {
 // editando o registro com post na tabela emprestimo
 app.post('/emp/updateemp', (req, res) => {
     const id_do_emprestimo = req.body.id_do_emprestimo
-    const nome = req.body.nome
+    const cpf = req.body.cpf
     const valor = req.body.emprestimo
     const parcelas = req.body.parcelas
     const juros = req.body.juros
     const data = req.body.data
 
-    const sql = `UPDATE emprestimo SET nome = '${nome}', valor_emprestimo = '${valor}', parcelas = '${parcelas}', juros = '${juros}', data = '${data}' WHERE id_do_emprestimo = ${id_do_emprestimo}`
+    const sql = `UPDATE emprestimo SET cpf = '${cpf}', valor_emprestimo = '${valor}', parcelas = '${parcelas}', juros = '${juros}', data = '${data}' WHERE id_do_emprestimo = ${id_do_emprestimo}`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -521,7 +521,9 @@ app.post('/cartao/insertcartao', (req, res) => {
     const tipodecartao = req.body.tipodecartao
     const limitecartao = req.body.limitecartao
     const saldocartao = req.body.saldocartao
-    const sql = `INSERT INTO cartao (numero_do_cartao,coddeseg, dataexp, tipodecartao, limitecartao, saldocartao) VALUES ( '${numero_do_cartao}','${coddeseg}','${dataexp}','${tipodecartao}','${limitecartao}','${saldocartao}')`
+    const nome_cliente = req.body.nome_cliente
+    const cpf = req.body.cpf
+    const sql = `INSERT INTO cartao (numero_do_cartao,coddeseg, dataexp, tipodecartao, limitecartao, saldocartao, nome_cliente, cpf) VALUES ( '${numero_do_cartao}','${coddeseg}','${dataexp}','${tipodecartao}','${limitecartao}','${saldocartao}','${nome_cliente}','${cpf}')`
     conn.query(sql, function (err) {
         if (err) {
             console.log(err)
@@ -588,7 +590,9 @@ app.post('/alterar/updateclient', (req, res) => {
     const tipodecartao = req.body.tipodecartao
     const limitecartao = req.body.limitecartao
     const saldocartao = req.body.saldocartao
-    const sql = `UPDATE cartao SET numero_do_cartao = '${numero_do_cartao}', coddeseg = '${coddeseg}', dataexp = '${dataexp}', tipodecartao = '${tipodecartao}', limitecartao= '${limitecartao}', saldocartao = '${saldocartao}' WHERE id_do_cartao = '${id_do_cartao}' `
+    const nome_cliente = req.body.nome_cliente
+    const cpf = req.body.cpf
+    const sql = `UPDATE cartao SET numero_do_cartao = '${numero_do_cartao}', coddeseg = '${coddeseg}', dataexp = '${dataexp}', tipodecartao = '${tipodecartao}', limitecartao= '${limitecartao}', saldocartao = '${saldocartao}', nome_cliente = '${nome_cliente}', cpf = '${cpf}' WHERE id_do_cartao = '${id_do_cartao}' `
 
     conn.query(sql, function (err) {
         if (err) {
@@ -636,12 +640,12 @@ app.post('/buscacart/', (req, res) => {
 // inserir dados na tabela contas
 app.post('/cont/insertcont', (req, res) => {
     const nome_cliente = req.body.nome_cliente
-    const id_do_cliente = req.body.id_do_cliente
+    const cpf = req.body.cpf
     const tipo_de_conta = req.body.tipo_de_conta
     const saldo = req.body.saldo
     const id_da_agencia = req.body.id_da_agencia
 
-    const sql = `INSERT INTO contas (nome_cliente,id_do_cliente,tipo_de_conta,saldo,id_da_agencia) VALUES ('${nome_cliente}','${id_do_cliente}','${tipo_de_conta}','${saldo}','${id_da_agencia}')`
+    const sql = `INSERT INTO contas (nome_cliente,cpf,tipo_de_conta,saldo,id_da_agencia) VALUES ('${nome_cliente}','${cpf}','${tipo_de_conta}','${saldo}','${id_da_agencia}')`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -704,12 +708,12 @@ app.get('/cont/editCont/:id_da_conta', (req, res) => {
 app.post('/cont/updatecont', (req, res) => {
     const id_da_conta = req.body.id_da_conta
     const nome_cliente = req.body.nome_cliente
-    const id_do_cliente = req.body.id_do_cliente
+    const cpf = req.body.cpf
     const tipo_de_conta = req.body.tipo_de_conta
     const saldo = req.body.saldo
     const id_da_agencia = req.body.id_da_agencia
 
-    const sql = `UPDATE contas SET nome_cliente = '${nome_cliente}', id_do_cliente = '${id_do_cliente}', tipo_de_conta = '${tipo_de_conta}', saldo = '${saldo}', id_da_agencia = '${id_da_agencia}' WHERE id_da_conta = ${id_da_conta}`
+    const sql = `UPDATE contas SET nome_cliente = '${nome_cliente}', cpf = '${cpf}', tipo_de_conta = '${tipo_de_conta}', saldo = '${saldo}', id_da_agencia = '${id_da_agencia}' WHERE id_da_conta = ${id_da_conta}`
 
     conn.query(sql, function (err) {
         if (err) {
@@ -794,13 +798,6 @@ app.post('/login', (req, res) => {
 //        )
 
 //       })
-
-
-
-
-
-
-
 
 
 
