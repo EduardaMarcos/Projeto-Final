@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02-Mar-2023 às 01:53
+-- Tempo de geração: 06-Mar-2023 às 22:26
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -39,7 +39,8 @@ CREATE TABLE `agencia` (
 --
 
 INSERT INTO `agencia` (`id_da_agencia`, `endereco`, `email`, `telefone`) VALUES
-(1, 'Madureira', 'exemplo@gmail.com', '21649075139');
+(205, 'Rua exemplo 99, Taquara', 'exemplo205@gmail.com', '2164907513'),
+(215, 'Rua exemplo 99, Anchieta', 'agencia215@gmail.com', '2130453495');
 
 -- --------------------------------------------------------
 
@@ -48,22 +49,25 @@ INSERT INTO `agencia` (`id_da_agencia`, `endereco`, `email`, `telefone`) VALUES
 --
 
 CREATE TABLE `cartao` (
-  `iddocartao` int(11) NOT NULL,
-  `coddeseg` bigint(11) NOT NULL,
+  `id_do_cartao` int(11) NOT NULL,
+  `numero_do_cartao` bigint(20) NOT NULL,
+  `coddeseg` int(3) NOT NULL,
   `dataexp` varchar(20) NOT NULL,
   `tipodecartao` varchar(20) NOT NULL,
   `limitecartao` int(100) NOT NULL,
-  `saldocartao` int(100) NOT NULL
+  `saldocartao` int(100) NOT NULL,
+  `nome_cliente` varchar(30) NOT NULL,
+  `cpf` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `cartao`
 --
 
-INSERT INTO `cartao` (`iddocartao`, `coddeseg`, `dataexp`, `tipodecartao`, `limitecartao`, `saldocartao`) VALUES
-(1, 215759654, '02/2030', 'Crédito', 5000, 2500),
-(2, 753159852, '01/2028', 'Débito', 3500, 1200),
-(3, 786324950, '12/2028', 'Débito', 4200, 2200);
+INSERT INTO `cartao` (`id_do_cartao`, `numero_do_cartao`, `coddeseg`, `dataexp`, `tipodecartao`, `limitecartao`, `saldocartao`, `nome_cliente`, `cpf`) VALUES
+(1, 9264829137895550, 156, '02/2030', 'Crédito', 5000, 2500, '', 0),
+(2, 4973698142987216, 432, '01/2028', 'Débito', 3500, 1200, '', 0),
+(3, 1648721934258149, 753, '12/2028', 'Débito', 4200, 2100, '', 0);
 
 -- --------------------------------------------------------
 
@@ -79,19 +83,18 @@ CREATE TABLE `clientes` (
   `telefone` bigint(20) NOT NULL,
   `endereco_cliente` varchar(30) NOT NULL,
   `id_do_emprestimo` int(11) NOT NULL,
-  `id_do_cartao` int(11) NOT NULL,
-  `id_da_agencia` int(11) NOT NULL
+  `numero_do_cartao` bigint(11) NOT NULL,
+  `id_da_agencia` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `clientes`
 --
 
-INSERT INTO `clientes` (`id_do_cliente`, `nome_cliente`, `cpf`, `email`, `telefone`, `endereco_cliente`, `id_do_emprestimo`, `id_do_cartao`, `id_da_agencia`) VALUES
-(1, 'Felipe Barreiro', 15935786252, 'lipebarreiro3@gmail.com', 21999998888, 'Madureira', 13, 565, 155),
-(2, 'Maria Eduarda', 46575315958, 'eduarda@gmail.com', 21987556145, 'Guadalupe', 24, 21, 105),
-(3, 'Breno Ricardo', 24986135746, 'breno@gmail.com', 21840628154, 'Taquara', 42, 81, 205),
-(4, 'Kaylane Mattos', 15935745685, 'kaylane@gmail.com', 21972465914, 'Anchieta', 45, 62, 215);
+INSERT INTO `clientes` (`id_do_cliente`, `nome_cliente`, `cpf`, `email`, `telefone`, `endereco_cliente`, `id_do_emprestimo`, `numero_do_cartao`, `id_da_agencia`) VALUES
+(1, 'Breno Ricardo Andrade', 24986135746, 'breno@gmail.com', 21840628154, 'Rua exemplo 99, Taquara', 42, 1054791350164857, 205),
+(2, 'Kaylane Mattos Silva', 15935745685, 'kaylane@gmail.com', 21972465914, 'Rua exemplo 99, Anchieta', 45, 6301496375102648, 215),
+(3, 'Luis Guilherme Pacheco', 65475315965, 'guipacheco@gmail.com', 21982175364, 'Rua exemplo 85, Bonsucesso', 32, 1657420987610357, 315);
 
 -- --------------------------------------------------------
 
@@ -102,7 +105,7 @@ INSERT INTO `clientes` (`id_do_cliente`, `nome_cliente`, `cpf`, `email`, `telefo
 CREATE TABLE `contas` (
   `id_da_conta` int(11) NOT NULL,
   `nome_cliente` varchar(30) NOT NULL,
-  `id_do_cliente` int(11) NOT NULL,
+  `cpf` bigint(11) NOT NULL,
   `tipo_de_conta` varchar(20) NOT NULL,
   `saldo` int(11) NOT NULL,
   `id_da_agencia` int(11) NOT NULL
@@ -112,11 +115,10 @@ CREATE TABLE `contas` (
 -- Extraindo dados da tabela `contas`
 --
 
-INSERT INTO `contas` (`id_da_conta`, `nome_cliente`, `id_do_cliente`, `tipo_de_conta`, `saldo`, `id_da_agencia`) VALUES
-(1, 'Felipe Barreiro', 25, 'Poupança', 4500, 105),
-(3, 'Maria Eduarda', 21, 'Salário', 50000, 106),
-(4, 'Breno Ricardo', 26, 'Poupança', 45000, 601),
-(5, 'Kaylane Mattos', 45, 'Corrente', 7500, 95);
+INSERT INTO `contas` (`id_da_conta`, `nome_cliente`, `cpf`, `tipo_de_conta`, `saldo`, `id_da_agencia`) VALUES
+(1, 'Felipe Barreiro Nascimento', 14796385246, 'Poupança', 4500, 105),
+(2, 'Maria Eduarda Pereira', 78128945746, 'Salário', 50000, 106),
+(3, 'Breno Ricardo Andrade', 24986135746, 'Poupança', 45000, 601);
 
 -- --------------------------------------------------------
 
@@ -126,7 +128,7 @@ INSERT INTO `contas` (`id_da_conta`, `nome_cliente`, `id_do_cliente`, `tipo_de_c
 
 CREATE TABLE `emprestimo` (
   `id_do_emprestimo` int(11) NOT NULL,
-  `nome` varchar(50) NOT NULL,
+  `cpf` bigint(20) NOT NULL,
   `valor_emprestimo` bigint(20) NOT NULL,
   `parcelas` int(11) NOT NULL,
   `juros` int(11) NOT NULL,
@@ -137,8 +139,9 @@ CREATE TABLE `emprestimo` (
 -- Extraindo dados da tabela `emprestimo`
 --
 
-INSERT INTO `emprestimo` (`id_do_emprestimo`, `nome`, `valor_emprestimo`, `parcelas`, `juros`, `data`) VALUES
-(1, 'Felipe Barreiro', 3200, 7, 5, '10/04/2023');
+INSERT INTO `emprestimo` (`id_do_emprestimo`, `cpf`, `valor_emprestimo`, `parcelas`, `juros`, `data`) VALUES
+(1, 15975346578, 3200, 7, 5, '10/04/2023'),
+(2, 45634975212, 2500, 8, 3, '25/05/2023');
 
 -- --------------------------------------------------------
 
@@ -160,8 +163,9 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `cpf`, `email`, `telefone`, `cargo`) VALUES
-(1, 'Felipe Barreiro', '45335175985', 'lipebarreiro3@gmail.com', '21999998889', 'Técnico'),
-(2, 'Maria Eduarda', '16597214256', 'eduarda@gmail.com', '21497214578', 'Técnica');
+(1, 'Felipe Barreiro Nascimento', '45335175985', 'lipebarreiro3@gmail.com', '21999998889', 'Técnico'),
+(2, 'Maria Eduarda Pereira', '16597214256', 'eduarda@gmail.com', '21497214578', 'Técnica'),
+(3, 'Yuri Leonor Lopes', '15795345685', 'yurilopes@gmail.com', '21453789645', 'Técnico');
 
 --
 -- Índices para tabelas despejadas
@@ -177,7 +181,7 @@ ALTER TABLE `agencia`
 -- Índices para tabela `cartao`
 --
 ALTER TABLE `cartao`
-  ADD PRIMARY KEY (`iddocartao`);
+  ADD PRIMARY KEY (`id_do_cartao`);
 
 --
 -- Índices para tabela `clientes`
@@ -211,19 +215,19 @@ ALTER TABLE `funcionarios`
 -- AUTO_INCREMENT de tabela `agencia`
 --
 ALTER TABLE `agencia`
-  MODIFY `id_da_agencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_da_agencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=406;
 
 --
 -- AUTO_INCREMENT de tabela `cartao`
 --
 ALTER TABLE `cartao`
-  MODIFY `iddocartao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_do_cartao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_do_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id_do_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `contas`
@@ -235,7 +239,7 @@ ALTER TABLE `contas`
 -- AUTO_INCREMENT de tabela `emprestimo`
 --
 ALTER TABLE `emprestimo`
-  MODIFY `id_do_emprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_do_emprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `funcionarios`
