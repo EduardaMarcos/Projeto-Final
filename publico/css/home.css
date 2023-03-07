@@ -15,7 +15,7 @@ header {
 h2 {
     color: white;
     text-align: center;
-    padding-top: 255px;
+    padding-top: 4em;
     font-size: 80px;
 }
 
@@ -45,6 +45,10 @@ h2 {
 .btn:focus,
 .btn:hover {
     text-decoration: none;
+}
+
+.btn-outline-success {
+    color: white;
 }
 
 .btn-outline-success:hover {
