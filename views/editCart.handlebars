@@ -37,75 +37,77 @@
             <a class="nav-link" href="#">Squad </a>
           </li>
         </ul>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        <a href="/busca"><button type="submit" style="width: 94px;
+    height: 37px;" class="btn btn-warning">Pesquisar</button></a>
         </form>
       </div>
     </nav>
   </header>
 
-  <div class="margem">
-    <h1>Editar Cartão</h1>
+  <div class="form">
+    <div class="margem">
+      <h1>Editar Cartão</h1>
 
-    <form action="/alterar/updateclient" method="post">
-      <div class="form-group">
-        <input class="form-control" type="hidden" name="id_do_cartao" id="id_do_cartao" value="{{cartao.id_do_cartao}}">
-      </div>
+      <form action="/alterar/updateclient" method="post">
+        <div class="form-group">
+          <input class="form-control" type="hidden" name="id_do_cartao" id="id_do_cartao"
+            value="{{cartao.id_do_cartao}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputCpf1">Número do cartão:</label>
-        <input type="text" class="form-control" name="numero_do_cartao" placeholder="Digite o número do cartão"
-          value="{{cartao.numero_do_cartao}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputCpf1">Número do cartão:</label>
+          <input type="text" class="form-control" name="numero_do_cartao" placeholder="Digite o número do cartão"
+            value="{{cartao.numero_do_cartao}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Código de segurança:</label>
-        <input class="form-control" name="coddeseg" placeholder="Digite o código de segurança"
-          value="{{cartao.coddeseg}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Código de segurança:</label>
+          <input class="form-control" name="coddeseg" placeholder="Digite o código de segurança"
+            value="{{cartao.coddeseg}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Data de validade:</label>
-        <input class="form-control" name="dataexp" placeholder="Digite a data de validade do cartão"
-          value="{{cartao.dataexp}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Data de validade:</label>
+          <input class="form-control" name="dataexp" placeholder="Digite a data de validade do cartão"
+            value="{{cartao.dataexp}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Tipo de cartão:</label>
-        <input class="form-control" name="tipodecartao" placeholder="Digite o tipo de cartão"
-          value="{{cartao.tipodecartao}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Tipo de cartão:</label>
+          <input class="form-control" name="tipodecartao" placeholder="Digite o tipo de cartão"
+            value="{{cartao.tipodecartao}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Limite:</label>
-        <input class="form-control" name="limitecartao" placeholder="Digite o limite do cartão"
-          value="{{cartao.limitecartao}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Limite:</label>
+          <input class="form-control" name="limitecartao" placeholder="Digite o limite do cartão"
+            value="{{cartao.limitecartao}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Saldo:</label>
-        <input class="form-control" name="saldocartao" placeholder="Digite o saldo do cartão"
-          value="{{cartao.saldocartao}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Saldo:</label>
+          <input class="form-control" name="saldocartao" placeholder="Digite o saldo do cartão"
+            value="{{cartao.saldocartao}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Nome do cliente:</label>
-        <input class="form-control" name="nome_cliente" placeholder="Digite o nome do cliente"
-          value="{{cartao.nome_cliente}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nome do cliente:</label>
+          <input class="form-control" name="nome_cliente" placeholder="Digite o nome do cliente"
+            value="{{cartao.nome_cliente}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">CPF:</label>
-        <input class="form-control" name="cpf" placeholder="Digite o CPF do cliente"
-          value="{{cartao.cpf}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">CPF:</label>
+          <input class="form-control" name="cpf" placeholder="Digite o CPF do cliente" value="{{cartao.cpf}}">
+        </div>
 
-      <div class="form-group">
-        <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
-      </div>
+        <div class="form-group">
+          <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
+        </div>
 
-    </form>
+      </form>
+    </div>
   </div>
-
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

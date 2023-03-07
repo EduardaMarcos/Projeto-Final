@@ -36,73 +36,76 @@
             <a class="nav-link" href="#">Squad </a>
           </li>
         </ul>
-        <a href="/busca"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button></a>
+        <a href="/busca"><button type="submit" style="width: 94px;
+    height: 37px;" class="btn btn-warning">Pesquisar</button></a>
         </form>
       </div>
     </nav>
   </header>
 
-  <div class="margem">
-    <h1>Editar cliente</h1>
-    <form action="/clie/updateclie" method="post">
-      <div class="form-group">
-        <input class="form-control" type="hidden" name="id_do_cliente" id="id_do_cliente"
-          value="{{clie.id_do_cliente}}">
-      </div>
 
-      <div class="form-group">
-        <label for="exampleInputCpf1">Nome:</label>
-        <input type="text" class="form-control" name="nome_cliente" placeholder="Digite o nome do cliente"
-          value="{{clie.nome_cliente}}">
-      </div>
+  <div class="form">
+    <div class="margem">
+      <h1>Editar cliente</h1>
+      <form action="/clie/updateclie" method="post">
+        <div class="form-group">
+          <input class="form-control" type="hidden" name="id_do_cliente" id="id_do_cliente"
+            value="{{clie.id_do_cliente}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">CPF:</label>
-        <input class="form-control" name="cpf" placeholder="Digite o cpf do cliente" value="{{clie.cpf}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputCpf1">Nome:</label>
+          <input type="text" class="form-control" name="nome_cliente" placeholder="Digite o nome do cliente"
+            value="{{clie.nome_cliente}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email:</label>
-        <input class="form-control" name="email" placeholder="Digite o email do cliente" value="{{clie.email}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">CPF:</label>
+          <input class="form-control" name="cpf" placeholder="Digite o cpf do cliente" value="{{clie.cpf}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Telefone:</label>
-        <input class="form-control" name="telefone" placeholder="Digite o telefone do cliente"
-          value="{{clie.telefone}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email:</label>
+          <input class="form-control" name="email" placeholder="Digite o email do cliente" value="{{clie.email}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Endereço:</label>
-        <input class="form-control" name="endereco_cliente" placeholder="Digite o endereço do cliente"
-          value="{{clie.endereco_cliente}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Telefone:</label>
+          <input class="form-control" name="telefone" placeholder="Digite o telefone do cliente"
+            value="{{clie.telefone}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">ID do empréstimo:</label>
-        <input class="form-control" name="id_do_emprestimo" placeholder="Digite o id do empréstimo"
-          value="{{clie.id_do_emprestimo}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Endereço:</label>
+          <input class="form-control" name="endereco_cliente" placeholder="Digite o endereço do cliente"
+            value="{{clie.endereco_cliente}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Numero do cartão:</label>
-        <input class="form-control" name="numero_do_cartao" placeholder="Digite o id do cartão"
-          value="{{clie.numero_do_cartao}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">ID do empréstimo:</label>
+          <input class="form-control" name="id_do_emprestimo" placeholder="Digite o id do empréstimo"
+            value="{{clie.id_do_emprestimo}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Agencia:</label>
-        <input class="form-control" name="id_da_agencia" placeholder="Digite a sua agência"
-          value="{{clie.id_da_agencia}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Numero do cartão:</label>
+          <input class="form-control" name="numero_do_cartao" placeholder="Digite o id do cartão"
+            value="{{clie.numero_do_cartao}}">
+        </div>
 
-      <div class="form-group">
-        <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Agencia:</label>
+          <input class="form-control" name="id_da_agencia" placeholder="Digite a sua agência"
+            value="{{clie.id_da_agencia}}">
+        </div>
 
-    </form>
+        <div class="form-group">
+          <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
+        </div>
+
+      </form>
+    </div>
   </div>
-
 
 
 

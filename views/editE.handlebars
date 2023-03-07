@@ -37,52 +37,55 @@
             <a class="nav-link" href="#">Squad </a>
           </li>
         </ul>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        <a href="/busca"><button type="submit" style="width: 94px;
+    height: 37px;" class="btn btn-warning">Pesquisar</button></a>
         </form>
       </div>
     </nav>
   </header>
 
-  <div class="margem">
-    <h1>Editar Empréstimo</h1>
+  <div class="form">
+    <div class="margem">
+      <h1>Editar Empréstimo</h1>
 
-    <form action="/emp/updateemp" method="post">
-      <div class="form-group">
-        <input class="form-control" type="hidden" name="id_do_emprestimo" id="id_do_emprestimo"
-          value="{{emp.id_do_emprestimo}}">
-      </div>
+      <form action="/emp/updateemp" method="post">
+        <div class="form-group">
+          <input class="form-control" type="hidden" name="id_do_emprestimo" id="id_do_emprestimo"
+            value="{{emp.id_do_emprestimo}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputCpf1">cpf:</label>
-        <input type="text" class="form-control" name="cpf" placeholder="Digite o CPF do cliente" value="{{emp.cpf}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputCpf1">cpf:</label>
+          <input type="text" class="form-control" name="cpf" placeholder="Digite o CPF do cliente" value="{{emp.cpf}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Valor:</label>
-        <input class="form-control" name="emprestimo" placeholder="Digite o valor do empréstimo"
-          value="{{emp.valor_emprestimo}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Valor:</label>
+          <input class="form-control" name="emprestimo" placeholder="Digite o valor do empréstimo"
+            value="{{emp.valor_emprestimo}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Parcelas:</label>
-        <input class="form-control" name="parcelas" placeholder="Digite quantas parcelas" value="{{emp.parcelas}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Parcelas:</label>
+          <input class="form-control" name="parcelas" placeholder="Digite quantas parcelas" value="{{emp.parcelas}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Juros:</label>
-        <input class="form-control" name="juros" placeholder="Juros" value="{{emp.juros}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Juros:</label>
+          <input class="form-control" name="juros" placeholder="Juros" value="{{emp.juros}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Data:</label>
-        <input class="form-control" name="data" placeholder="Digite a data do empréstimo" value="{{emp.data}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Data:</label>
+          <input class="form-control" name="data" placeholder="Digite a data do empréstimo" value="{{emp.data}}">
+        </div>
 
-      <div class="form-group">
-        <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
-      </div>
+        <div class="form-group">
+          <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
+        </div>
 
-    </form>
+      </form>
+    </div>
   </div>
 
 

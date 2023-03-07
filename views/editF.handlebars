@@ -37,55 +37,57 @@
             <a class="nav-link" href="#">Squad </a>
           </li>
         </ul>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        <a href="/busca"><button type="submit" style="width: 94px;
+    height: 37px;" class="btn btn-warning">Pesquisar</button></a>
         </form>
       </div>
     </nav>
   </header>
 
-  <div class="margem">
-    <h1>Editar Funcionário</h1>
+  <div class="form">
+    <div class="margem">
+      <h1>Editar Funcionário</h1>
 
-    <form action="/fun/updatefun" method="post">
-      <div class="form-group">
-        <input class="form-control" type="hidden" name="id_funcionario" id="id_funcionario"
-          value="{{fun.id_funcionario}}">
-      </div>
+      <form action="/fun/updatefun" method="post">
+        <div class="form-group">
+          <input class="form-control" type="hidden" name="id_funcionario" id="id_funcionario"
+            value="{{fun.id_funcionario}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputCpf1">Nome:</label>
-        <input type="text" class="form-control" name="nome" placeholder="Digite o nome do funcionário"
-          value="{{fun.nome}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputCpf1">Nome:</label>
+          <input type="text" class="form-control" name="nome" placeholder="Digite o nome do funcionário"
+            value="{{fun.nome}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">CPF:</label>
-        <input class="form-control" name="cpf" placeholder="Digite o cpf do funcionário" value="{{fun.cpf}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">CPF:</label>
+          <input class="form-control" name="cpf" placeholder="Digite o cpf do funcionário" value="{{fun.cpf}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email:</label>
-        <input class="form-control" name="email" placeholder="Digite o email do funcionário" value="{{fun.email}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email:</label>
+          <input class="form-control" name="email" placeholder="Digite o email do funcionário" value="{{fun.email}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Telefone:</label>
-        <input class="form-control" name="telefone" placeholder="Digite o telefone do funcionário"
-          value="{{fun.telefone}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Telefone:</label>
+          <input class="form-control" name="telefone" placeholder="Digite o telefone do funcionário"
+            value="{{fun.telefone}}">
+        </div>
 
-      <div class="form-group">
-        <label for="exampleInputEmail1">Cargo:</label>
-        <input class="form-control" name="cargo" placeholder="Digite o cargo do funcionário" value="{{fun.cargo}}">
-      </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Cargo:</label>
+          <input class="form-control" name="cargo" placeholder="Digite o cargo do funcionário" value="{{fun.cargo}}">
+        </div>
 
-      <div class="form-group">
-        <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
-      </div>
+        <div class="form-group">
+          <button type="submit" value="Editar" class="btn btn-warning">Editar</button>
+        </div>
 
-    </form>
+      </form>
+    </div>
   </div>
-
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

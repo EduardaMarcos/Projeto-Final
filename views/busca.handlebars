@@ -10,6 +10,7 @@
     integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="/publico/css/busca.css">
   <link rel="stylesheet" href="/publico/css/home.css">
+  <link rel="stylesheet" href="/publico/css/cadastro.css">
 </head>
 
 <body>
@@ -38,100 +39,134 @@
             <a class="nav-link " href="#">Squad</a>
           </li>
         </ul>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        <a href="/busca"><button type="submit" style="width: 94px;
+    height: 37px;" class="btn btn-warning">Pesquisar</button></a>
         </form>
       </div>
     </nav>
   </header>
 
 
-  <div class="corno">
-    <form action="/busc/" method="post">
-      <h1>Busca de clientes cadastrados</h1>
-      <hr>
+  <div class="form">
+    <h1>Pesquisar</h1>
+    <div class="btscad">
 
-      <div class="form-group">
-        <input class="form-control" type="text" name="id_do_cliente" id="">
-        <br>
-        <button type="submit" value="Buscar" class="btn btn-outline-warning">Buscar</button>
-    </form>
+      <div class="botoes">
+        <a href="#Bcl"><button type="button" style="background: none; color: #ffa700"
+            class="btn btn-outline-warning">Busca de Clientes</button></a>
+        <a href="#Bag"><button type="button" style="background: none; color: #ffa700"
+            class="btn btn-outline-warning">Busca de agências</button></a>
 
-    <br><br>
-
-    <form action="/busque/" method="post">
-
-      <h1>Busca de empréstimos</h1>
-      <hr>
-
-      <div class="form-group">
-        <input class="form-control" type="text" name="emprestimo" id="">
-        <br>
-        <button type="submit" value="Buscar" class="btn btn-outline-warning">Buscar</button>
-    </form>
-
-    <br><br>
-
-    <form action="/buscaA/" method="post">
-
-      <h1>Busca de agência</h1>
-      <hr>
-      <div class="form-group">
-        <input class="form-control" type="text" name="id_da_agencia" id="">
-        <br>
-        <button type="submit" value="Buscar" class="btn btn-outline-warning">Buscar</button>
-    </form>
-
-    <br><br>
-
-    <form action="/buscaF/" method="post">
-
-      <h1>Busca de funcionários</h1>
-      <hr>
-      <div class="form-group">
-        <input class="form-control" type="text" name="id_funcionario" id="">
-        <button type="submit" value="Buscar" class="btn btn-outline-warning">Buscar</button>
-    </form>
-
-    <br><br>
-
-    <form action="/buscacart/" method="post">
-
-      <h1>Busca de cartões</h1>
-      <hr>
-
-      <div class="form-group">
-        <input class="form-control" type="text" name="id_do_cartao" id="">
-        <br>
-        <button type="submit" value="Buscar" class="btn btn-outline-warning">Buscar</button>
       </div>
-    </form>
-
-    <br><br>
-
-    <form action="/buscconta/" method="post">
-
-      <h1>Busca de contas</h1>
-      <hr>
-      <div class="form-group">
-        <input class="form-control" type="text" name="id_da_conta" id="">
-        <br>
-        <button type="submit" value="Buscar" class="btn btn-outline-warning">Buscar</button>
+      <br><br>
+      <div class="botoes">
+        <a href="#Bco"><button type="button" style="background: none; color: #ffa700"
+            class="btn btn-outline-warning">Busca de contas</button></a>
+        <a href="#Bca"><button type="button" style="background: none; color: #ffa700"
+            class="btn btn-outline-warning">Busca de cartões</button></a>
       </div>
-    </form>
-  </div>
+      <br><br>
+
+      <div class="botoes">
+        <a href="#Bem"><button type="button" style="background: none; color: #ffa700"
+            class="btn btn-outline-warning">Busca de empréstimos</button></a>
+        <a href="#Bfu"><button type="button" style="background: none; color: #ffa700"
+            class="btn btn-outline-warning">Busca de funcionários</button></a>
+      </div>
+      <br><br>
+
+
+    </div>
+
+    <div class="corno">
+      <a name="Bcl"></a>
+      <form action="/busc/" method="post">
+        <h1>Busca de clientes cadastrados</h1>
+        <hr>
+
+        <div class="form-group">
+          <input class="form-control" type="text" name="id_do_cliente" id="">
+          <br>
+          <button type="submit" value="Buscar" class="btn btn-warning">Pesquisar</button>
+      </form>
+
+      <br><br>
+<a name="Bem"></a>
+      <form action="/busque/" method="post">
+
+        <h1>Busca de empréstimos</h1>
+        <hr>
+
+        <div class="form-group">
+          <input class="form-control" type="text" name="emprestimo" id="">
+          <br>
+          <button type="submit" value="Buscar" class="btn btn-warning">Pesquisar</button>
+      </form>
+
+      <br><br>
+<a name="Bag"></a>
+      <form action="/buscaA/" method="post">
+
+        <h1>Busca de agência</h1>
+        <hr>
+        <div class="form-group">
+          <input class="form-control" type="text" name="id_da_agencia" id="">
+          <br>
+          <button type="submit" value="Buscar" class="btn btn-warning">Pesquisar</button>
+      </form>
+
+      <br><br>
+<a name="Bfu"></a>
+      <form action="/buscaF/" method="post">
+
+        <h1>Busca de funcionários</h1>
+        <hr>
+        <div class="form-group">
+          <input class="form-control" type="text" name="id_funcionario" id="">
+          <br>
+          <button type="submit" value="Buscar" class="btn btn-warning">Pesquisar</button>
+      </form>
+
+      <br><br>
+<a name="Bca"></a>
+      <form action="/buscacart/" method="post">
+
+        <h1>Busca de cartões</h1>
+        <hr>
+
+        <div class="form-group">
+          <input class="form-control" type="text" name="id_do_cartao" id="">
+          <br>
+          <button type="submit" value="Buscar" class="btn btn-warning">Pesquisar</button>
+        </div>
+      </form>
+
+      <br><br>
+<a name="Bco"></a>
+      <form action="/buscconta/" method="post">
+
+        <h1>Busca de contas</h1>
+        <hr>
+        <div class="form-group">
+          <input class="form-control" type="text" name="id_da_conta" id="">
+          <br>
+          <button type="submit" value="Buscar" class="btn btn-warning">Pesquisar</button>
+        </div>
+      </form>
+    </div>
 
 
 
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
 
 
 </body>
