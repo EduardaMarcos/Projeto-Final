@@ -150,9 +150,9 @@ app.get('/clie/remove/:id_do_cliente', (req, res) => {
 // busca de resgistro da tabela clientes
 //rota de busca (busc) que enviar para view cliente cliente.handlebars
 app.post('/busc/', (req, res) => {
-    const id_do_cliente = req.body.id_do_cliente
+    const cpf = req.body.cpf
 
-    const sql = `SELECT * FROM clientes WHERE id_do_cliente = ${id_do_cliente}`
+    const sql = `SELECT * FROM clientes WHERE cpf = ${cpf}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -266,9 +266,9 @@ app.get('/emp/remove/:id_do_emprestimo', (req, res) => {
 // busca de resgistro da tabela emprestimo
 //rota de busca (busque) que enviar para view emprestimo.handlebars
 app.post('/busque/', (req, res) => {
-    const id_do_emprestimo = req.body.emprestimo
+    const cpf = req.body.emprestimo
 
-    const sql = `SELECT * FROM emprestimo WHERE id_do_emprestimo = ${id_do_emprestimo}`
+    const sql = `SELECT * FROM emprestimo WHERE cpf = ${cpf}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -501,7 +501,7 @@ app.get('/fun/remove/:id_funcionario', (req, res) => {
 app.post('/buscaF/', (req, res) => {
     const id_funcionario = req.body.id_funcionario
 
-    const sql = `SELECT * FROM funcionarios WHERE id_funcionario = ${id_funcionario}`
+    const sql = `SELECT * FROM funcionarios WHERE cpf = ${id_funcionario}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -624,7 +624,7 @@ app.get('/cartao/remove/:id_do_cartao', (req, res) => {
 app.post('/buscacart/', (req, res) => {
     const id_do_cartao = req.body.id_do_cartao
 
-    const sql = `SELECT * FROM cartao WHERE id_do_cartao = ${id_do_cartao}`
+    const sql = `SELECT * FROM cartao WHERE numero_do_cartao = ${id_do_cartao}`
 
     conn.query(sql, function (err, data) {
         if (err) {
@@ -645,8 +645,9 @@ app.post('/cont/insertcont', (req, res) => {
     const tipo_de_conta = req.body.tipo_de_conta
     const saldo = req.body.saldo
     const id_da_agencia = req.body.id_da_agencia
+    const numero_da_conta = req.body.id_da_conta
 
-    const sql = `INSERT INTO contas (nome_cliente,cpf,tipo_de_conta,saldo,id_da_agencia) VALUES ('${nome_cliente}','${cpf}','${tipo_de_conta}','${saldo}','${id_da_agencia}')`
+    const sql = `INSERT INTO contas (id_da_conta,nome_cliente,cpf,tipo_de_conta,saldo,id_da_agencia) VALUES ('${numero_da_conta}','${nome_cliente}','${cpf}','${tipo_de_conta}','${saldo}','${id_da_agencia}')`
 
     conn.query(sql, function (err) {
         if (err) {
