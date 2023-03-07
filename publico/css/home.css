@@ -2,6 +2,16 @@ body {
     background-color: rgb(15, 15, 15);
 }
 
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.margem h1 {
+    padding-left: em;
+}
+
 h2 {
     color: white;
     text-align: center;
@@ -11,7 +21,6 @@ h2 {
 
 .bg-light {
     background-color: white !important;
-
 }
 
 .bank {
@@ -26,7 +35,6 @@ h2 {
     color: #fff;
     border-color: #ffa700;
     background-color: #ffa700;
-
 }
 
 .navbar-brand {

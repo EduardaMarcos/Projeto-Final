@@ -1,11 +1,77 @@
 body {
     background-color: rgb(0, 0, 0);
     color: #ffa700;
-    margin: 150px 400px 0px 400px;
+}
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.margem {
+    color: #ffa700;
+    font-size: 20px;
+    width: 700px;
+}
+
+.margem h1 {
+    padding-top: 3em;
 }
 
 .btn-warning {
     width: 100px;
     height: 50px;
     background-color: #ffa700;
+}
+
+.bg-light {
+    background-color: white !important;
+}
+
+.bank {
+    color: #ffa700;
+}
+
+.sena {
+    color: #ffa700;
+}
+
+.btn {
+    color: #fff;
+    border-color: #ffa700;
+    background-color: #ffa700;
+}
+
+.navbar-brand {
+    color: black;
+    font-size: 40px;
+}
+
+.btn:focus,
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-outline-success:hover {
+    color: #fff;
+    background-color: #ffa700;
+    border: 2px solid black;
+
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, .9);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ffa700;
+    font-size: 18px;
+    padding-left: 20px;
 }
