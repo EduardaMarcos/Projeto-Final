@@ -14,55 +14,56 @@
 
 <body>
 
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"> <strong class="sena"><i>SENA</i></strong><strong><i>BANK</i></strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"> <strong class="sena"><i>SENA</i></strong><strong><i>BANK</i></strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto container-fluid justify-content-end">
-                <li class="nav-item ">
-                    <a class="nav-link" href="/home">Home </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/cadastro">Cadastrar</a>
-                </li>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/dados">Dados</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Squad</a>
-                </li>
-            </ul>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-            </form>
-        </div>
-    </nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto container-fluid justify-content-end">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/home">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/cadastro">Cadastrar</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/dados">Dados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Squad</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </nav>
+    </header>
 
     <div class="margem">
-    <h1>Cartões</h1>
-    <div class="conjunto">
-        {{#each listar}}
+        <h1>Cartões</h1>
+        <div class="conjunto">
+            {{#each listar}}
 
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{endereco}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Código de segurança: {{coddeseg}}</h6>
-                <p class="card-text">Data de validade: {{dataexp}}<br>Tipo do cartão: {{tipodecartao}}<br></p>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{endereco}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Código de segurança: {{coddeseg}}</h6>
+                    <p class="card-text">Data de validade: {{dataexp}}<br>Tipo do cartão: {{tipodecartao}}<br></p>
 
-                <button type="submit" value="Buscar" class="btn btn-outline-warning"><a
-                        href="/cartao/{{this.id_do_cartao}}" class="card-link"> Mais informações</a></button>
+                    <button type="submit" value="Buscar" class="btn btn-outline-warning"><a
+                            href="/cartao/{{this.id_do_cartao}}" class="card-link"> Mais informações</a></button>
+                </div>
             </div>
+            {{/each}}
+
+
+
         </div>
-        {{/each}}
-
-
-
-    </div>
     </div>
 
 

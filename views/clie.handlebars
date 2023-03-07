@@ -14,34 +14,35 @@
 
 <body>
 
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"> <strong class="sena"><i>SENA</i></strong><strong><i>BANK</i></strong></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"> <strong class="sena"><i>SENA</i></strong><strong><i>BANK</i></strong></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto container-fluid justify-content-end">
-                <li class="nav-item ">
-                    <a class="nav-link" href="/home">Home </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/cadastro">Cadastrar</a>
-                </li>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="/dados">Dados</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link " href="#">Squad</a>
-                </li>
-            </ul>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-            </form>
-        </div>
-    </nav>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto container-fluid justify-content-end">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/home">Home </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/cadastro">Cadastrar</a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/dados">Dados</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Squad</a>
+                    </li>
+                </ul>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </nav>
+    </header>
 
     <div class="margem">
         <h1>Clientes</h1>
@@ -54,8 +55,8 @@
                     <h6 class="card-subtitle mb-2 text-muted"> CPF: {{cpf}}</h6>
                     <p class="card-text">Email: {{email}}<br>Telefone: {{telefone}}</p>
 
-                    <button type="submit" value="Buscar" class="btn btn-outline-warning"><a
-                            href="/clie/{{this.id_do_cliente}}" class="card-link"> Mais informações</a></button>
+                    <a href="/clie/{{this.id_do_cliente}}" class="card-link"><button type="submit" value="Buscar"
+                            class="btn btn-outline-warning">Mais informações</button></a>
                 </div>
             </div>
             {{/each}}
