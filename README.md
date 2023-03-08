@@ -24,12 +24,12 @@
 * Faça o clone do projeto com o comando abaixo:
 
 ```cmd
-git clone https://github.com/Lipebarreiro/CRUD_projeto5.git
+git clone https://github.com/EduardaMarcos/Projeto-Final
 ```
 * Abra a pasta do clone e em seguida, instale as dependências do projeto com o comando:
 ```cmd
 # Abrir pasta do clone 
-cd CRUD_projeto5
+cd Projeto-Final
 
 # Instalar as dependências do projeto
 npm install
