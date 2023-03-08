@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Mar-2023 às 20:55
+-- Tempo de geração: 08-Mar-2023 às 05:00
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -39,12 +39,14 @@ CREATE TABLE `agencia` (
 --
 
 INSERT INTO `agencia` (`id_da_agencia`, `endereco`, `email`, `telefone`) VALUES
-(0, '', '', ''),
-(22, '', '', ''),
-(205, 'Rua exemplo 99, Taquara', 'exemplo205@gmail.com', '2164907513'),
-(215, 'Rua exemplo 99, Anchieta', 'agencia215@gmail.com', '2130453495'),
-(11111, '', '', ''),
-(1111111111, '', '', '');
+(123, 'Rua Exemplo 34, Méier', 'meier123@gmail.com', '21030496037'),
+(130, 'Rua Exemplo 24, Vila da Penha', 'vilapenha130@gmail.com', '21097306480'),
+(159, 'Rua Exemplo 15, Centro', 'centro159@gmail.com', '21456731596'),
+(206, 'Rua Exemplo 55, Madureira', 'madureira206@gmail.com', '21109406789'),
+(357, 'Rua Exemplo 45, São Cristóvão', 'saocristovao357@gmail.com', '21301089137'),
+(405, 'Rua Exemplo 94, Botafogo', 'botafogo405@gmail.com', '21090438304'),
+(710, 'Rua Exemplo 12, Cachambi', 'cachambi710@gmail.com', '21750934098'),
+(753, 'Rua Exemplo 91, Penha', 'penha753@gmail.com', '21450957036');
 
 -- --------------------------------------------------------
 
@@ -69,10 +71,14 @@ CREATE TABLE `cartao` (
 --
 
 INSERT INTO `cartao` (`id_do_cartao`, `numero_do_cartao`, `coddeseg`, `dataexp`, `tipodecartao`, `limitecartao`, `saldocartao`, `nome_cliente`, `cpf`) VALUES
-(1, 9264829137895550, 156, '02/2030', 'Crédito', 5000, 2500, 'teste', 0),
-(2, 4973698142987216, 432, '01/2028', 'Débito', 3500, 1200, '', 0),
-(3, 1648721934258149, 753, '12/2028', 'Débito', 4200, 2100, '', 0),
-(27, 0, 0, '', '', 0, 0, '', 0);
+(1, 1463497246045, 201, '05/2030', 'Crédito', 4500, 2500, 'Felipe Barreiro Nascimento', 15731864580),
+(2, 1067954036401, 202, '07/2030', 'Crédito', 5000, 3000, 'Maria Eduarda Pereira', 16049703485),
+(3, 6493046821750, 203, '02/2030', 'Débito', 3500, 1200, 'Kaylane Mattos Silva', 13064089045),
+(4, 4350169874216, 204, '01/2030', 'Débito', 6000, 3200, 'Breno Ricardo Andrade', 10973460587),
+(5, 4561970649015, 205, '03/2030', 'Crédito', 6000, 4500, 'Luis Guilherme Pacheco', 15346706794),
+(6, 1576341067950, 208, '08/2030', 'Débito', 7800, 5600, 'Yuri Leonor Lopes', 43096374920),
+(7, 5304609705642, 206, '04/2030', 'Crédito', 4500, 1200, 'Lucas da Silva Souza', 45630972462),
+(8, 4608901739504, 207, '06/2030', 'Débito', 6200, 4000, 'José Antônio Nascimento', 45018097661);
 
 -- --------------------------------------------------------
 
@@ -88,7 +94,7 @@ CREATE TABLE `clientes` (
   `telefone` bigint(20) NOT NULL,
   `endereco_cliente` varchar(30) NOT NULL,
   `id_do_emprestimo` int(11) NOT NULL,
-  `numero_do_cartao` bigint(11) NOT NULL,
+  `numero_do_cartao` bigint(20) NOT NULL,
   `id_da_agencia` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -97,10 +103,14 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`id_do_cliente`, `nome_cliente`, `cpf`, `email`, `telefone`, `endereco_cliente`, `id_do_emprestimo`, `numero_do_cartao`, `id_da_agencia`) VALUES
-(1, 'Breno Ricardo Andrade', 24986135746, 'breno@gmail.com', 21840628154, 'Rua exemplo 99, Taquara', 42, 1054791350164857, 205),
-(2, 'Kaylane Mattos Silva', 15935745685, 'kaylane@gmail.com', 21972465914, 'Rua exemplo 99, Anchieta', 45, 6301496375102648, 215),
-(3, 'Luis Guilherme Pacheco', 65475315965, 'guipacheco@gmail.com', 21982175364, 'Rua exemplo 85, Bonsucesso', 32, 1657420987610357, 315),
-(27, '', 0, '', 0, '', 0, 0, 0);
+(1, 'Felipe Barreiro Nascimento', 15731864580, 'lipebar@gmail.com', 21945196286, 'Rua Exemplo 23, Madureira', 215, 1463497246045, 206),
+(2, 'Maria Eduarda Pereira', 16049703485, 'eduarda38@gmail.com', 21035796014, 'Rua Exemplo 81, Guadalupe', 216, 1067954036401, 159),
+(3, 'Kaylane Mattos Silva', 13064089045, 'kay54@gmail.com', 21648967501, 'Rua Exemplo 18, Anchieta', 217, 6493046821750, 130),
+(4, 'Breno Ricardo Andrade', 10973460587, 'breno23@gmail.com', 21579043067, 'Rua Exemplo 99, Taquara', 218, 4350169874216, 123),
+(5, 'Luis Guilherme Pacheco', 15346706794, 'guipacheco@gmail.com', 21430496705, 'Rua Exemplo 22, Penha', 219, 4561970649015, 357),
+(6, 'Yuri Leonor Lopes', 43096374920, 'leonor32@gmail.com', 21056740934, 'Rua Exempo 66, Ipanema', 222, 1576341067950, 753),
+(7, 'Lucas da Silva Souza', 45630972462, 'lucas34@gmail.com', 21649735604, 'Rua Exemplo 10, Botafogo', 220, 5304609705642, 405),
+(8, 'José Antônio Nascimento', 45018097661, 'jose20@gmail.com', 21029436780, 'Rua Exemplo 32, Recreio', 221, 4608901739504, 710);
 
 -- --------------------------------------------------------
 
@@ -122,12 +132,14 @@ CREATE TABLE `contas` (
 --
 
 INSERT INTO `contas` (`id_da_conta`, `nome_cliente`, `cpf`, `tipo_de_conta`, `saldo`, `id_da_agencia`) VALUES
-(1, 'Felipe Barreiro Nascimento', 14796385246, 'Poupança', 4500, 105),
-(2, 'Maria Eduarda Pereira Dias', 78128945746, 'Salário', 50000, 106),
-(3, 'Breno Ricardo Andrade', 24986135746, 'Poupança', 45000, 601),
-(6, '', 0, '', 0, 0),
-(7, '', 0, '', 0, 0),
-(555555, '', 0, '', 0, 0);
+(1, 'Felipe Barreiro Nascimento', 15731864580, 'Corrente', 3000, 206),
+(2, 'Maria Eduarda Pereira', 16049703485, 'Poupança', 5000, 159),
+(3, 'Kaylane Mattos Silva', 13064089045, 'Corrente', 3500, 130),
+(4, 'Breno Ricardo Andrade', 10973460587, 'Poupança', 6000, 123),
+(5, 'Luis Guilherme Pacheco', 15346706794, 'Corrente', 7500, 357),
+(6, 'Yuri Leonor Lopes', 43096374920, 'Corrente', 3200, 753),
+(7, 'Lucas da Silva Souza', 45630972462, 'Corrente', 3600, 405),
+(8, 'José Antônio Nascimento', 45018097661, 'Poupança', 8500, 710);
 
 -- --------------------------------------------------------
 
@@ -140,7 +152,7 @@ CREATE TABLE `emprestimo` (
   `cpf` bigint(20) NOT NULL,
   `valor_emprestimo` bigint(20) NOT NULL,
   `parcelas` int(11) NOT NULL,
-  `juros` int(11) NOT NULL,
+  `juros` varchar(20) NOT NULL,
   `data` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -149,9 +161,14 @@ CREATE TABLE `emprestimo` (
 --
 
 INSERT INTO `emprestimo` (`id_do_emprestimo`, `cpf`, `valor_emprestimo`, `parcelas`, `juros`, `data`) VALUES
-(1, 15975346578, 3200, 7, 5, '10/04/2023'),
-(2, 45634975212, 2500, 8, 3, '25/05/2023'),
-(9, 0, 0, 0, 0, '');
+(215, 15731864580, 4500, 5, '3%', '07/03/2023'),
+(216, 16049703485, 1600, 3, '2%', '05/01/2023'),
+(217, 13064089045, 3100, 7, '4%', '15/02/2023'),
+(218, 10973460587, 1200, 3, '2%', '02/03/2023'),
+(219, 15346706794, 3500, 5, '4%', '15/12/2022'),
+(220, 45630972462, 4300, 7, '5%', '25/12/2022'),
+(221, 45018097661, 6000, 10, '7%', '18/01/2023'),
+(222, 43096374920, 4500, 12, '8%', '31/01/2023');
 
 -- --------------------------------------------------------
 
@@ -173,12 +190,14 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `cpf`, `email`, `telefone`, `cargo`) VALUES
-(1, 'Felipe Barreiro Nascimento', '45335175985', 'lipebarreiro3@gmail.com', '21999998889', 'Técnico'),
-(2, 'Maria Eduarda Pereira', '16597214256', 'eduarda@gmail.com', '21497214578', 'Técnica'),
-(3, 'Yuri Leonor Lopes', '15795345685', 'yurilopes@gmail.com', '21453789645', 'Técnico'),
-(7, '', '', '', '', ''),
-(8, '', '', '', '', ''),
-(9, '', '', '', '', '');
+(1, 'Roberto Alves Silva', '43019701646', 'robertoalves54@gmail.com', '21450460197', 'Gerente'),
+(2, 'Gabriel Santos Silva', '40160579315', 'gabi34@gmail.com', '21034685072', 'Assistente da gerência'),
+(3, 'Heitor Aguiar Santos', '45609073168', 'heitor90@gmail.com', '21345790164', 'Especialista em Investimento'),
+(4, 'Rafael Araújo de Souza', '10679245831', 'rafa59@gmail.com', '21064957309', 'Agente Comercial'),
+(5, 'Felipe Batista Carvalho', '46387689216', 'felipebatista43@gmail.com', '21963480679', 'Caixa'),
+(6, 'Guilherme Ramalho Dias', '16793050496', 'guiramal@gmail.com', '21930460876', 'Caixa'),
+(7, 'Davi Miguel Fagundes', '46305628750', 'davi56@gmail.com', '21647068306', 'Caixa'),
+(8, 'Paulo Henrique Lins', '15634978064', 'henrique91@gmail.com', '21456809318', 'Estagiário');
 
 --
 -- Índices para tabelas despejadas
@@ -225,6 +244,12 @@ ALTER TABLE `funcionarios`
 --
 
 --
+-- AUTO_INCREMENT de tabela `agencia`
+--
+ALTER TABLE `agencia`
+  MODIFY `id_da_agencia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2053;
+
+--
 -- AUTO_INCREMENT de tabela `cartao`
 --
 ALTER TABLE `cartao`
@@ -234,19 +259,25 @@ ALTER TABLE `cartao`
 -- AUTO_INCREMENT de tabela `clientes`
 --
 ALTER TABLE `clientes`
-  MODIFY `id_do_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_do_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT de tabela `contas`
+--
+ALTER TABLE `contas`
+  MODIFY `id_da_conta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `emprestimo`
 --
 ALTER TABLE `emprestimo`
-  MODIFY `id_do_emprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_do_emprestimo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=223;
 
 --
 -- AUTO_INCREMENT de tabela `funcionarios`
 --
 ALTER TABLE `funcionarios`
-  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_funcionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
