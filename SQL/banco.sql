@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 08-Mar-2023 às 05:00
+-- Tempo de geração: 08-Mar-2023 às 20:21
 -- Versão do servidor: 10.4.27-MariaDB
 -- versão do PHP: 8.2.0
 
@@ -190,14 +190,14 @@ CREATE TABLE `funcionarios` (
 --
 
 INSERT INTO `funcionarios` (`id_funcionario`, `nome`, `cpf`, `email`, `telefone`, `cargo`) VALUES
-(1, 'Roberto Alves Silva', '43019701646', 'robertoalves54@gmail.com', '21450460197', 'Gerente'),
-(2, 'Gabriel Santos Silva', '40160579315', 'gabi34@gmail.com', '21034685072', 'Assistente da gerência'),
-(3, 'Heitor Aguiar Santos', '45609073168', 'heitor90@gmail.com', '21345790164', 'Especialista em Investimento'),
-(4, 'Rafael Araújo de Souza', '10679245831', 'rafa59@gmail.com', '21064957309', 'Agente Comercial'),
-(5, 'Felipe Batista Carvalho', '46387689216', 'felipebatista43@gmail.com', '21963480679', 'Caixa'),
-(6, 'Guilherme Ramalho Dias', '16793050496', 'guiramal@gmail.com', '21930460876', 'Caixa'),
-(7, 'Davi Miguel Fagundes', '46305628750', 'davi56@gmail.com', '21647068306', 'Caixa'),
-(8, 'Paulo Henrique Lins', '15634978064', 'henrique91@gmail.com', '21456809318', 'Estagiário');
+(1, 'Roberto Alves Silva', '43019701646', 'robertoalves54@gmail.com', '21450460197', 'Auxiliar Administrativo'),
+(2, 'Gabriel Santos Silva', '40160579315', 'gabi34@gmail.com', '21034685072', 'Auxiliar Administrativo'),
+(3, 'Heitor Aguiar Santos', '45609073168', 'heitor90@gmail.com', '21345790164', 'Auxiliar Administrativo'),
+(4, 'Rafael Araújo de Souza', '10679245831', 'rafa59@gmail.com', '21064957309', 'Auxiliar Administrativo'),
+(5, 'Felipe Batista Carvalho', '46387689216', 'felipebatista43@gmail.com', '21963480679', 'Operador de Telemarketing'),
+(6, 'Guilherme Ramalho Dias', '16793050496', 'guiramal@gmail.com', '21930460876', 'Operador de Telemarketing'),
+(7, 'Davi Miguel Fagundes', '46305628750', 'davi56@gmail.com', '21647068306', 'Operador de Telemarketing'),
+(8, 'Paulo Henrique Lins', '15634978064', 'henrique91@gmail.com', '21456809318', 'Gerente');
 
 --
 -- Índices para tabelas despejadas
