@@ -26,6 +26,10 @@ app.get('/home', (req, res) => {
     res.render('home', { layout: false })
 })
 
+app.get('/squad', (req, res) => {
+    res.render('squad', { layout: false })
+})
+
 app.get('/cadastro', (req, res) => {
     res.render('cadastro', { layout: false })
 })
@@ -771,10 +775,11 @@ app.post('/login', (req, res) => {
             res.render('home')
         } else {
             // Falha na autenticação;
-            res.send('E-mail ou CPF inválidos');
+            res.redirect('/')
         }
     })
 });
+   
 
 
 
