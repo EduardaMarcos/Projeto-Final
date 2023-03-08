@@ -812,7 +812,7 @@ app.post('/login', (req, res) => {
 //conexao com o banco de dados
 const conn = mysql.createConnection({
     host: 'localhost',
-    port: '3307',
+    port: '3306',
     user: 'root',
     password: '',
     database: 'senabank'
